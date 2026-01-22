@@ -54,7 +54,6 @@ function init() {
     $questionSection = $(".question-section");
     $answerInput = $(".answer-input");
     $doneButton = $(".done-button");
-    $successBorder = $(".success-border");
 
     createBoxes();
     createDonuts();
