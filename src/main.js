@@ -7,12 +7,25 @@ let boxes = [];
 let selectedDonuts = [];
 let currentBoxIndex = 0;
 let isAnimating = false;
+const positions = [
+        { x: 320, y: 40 },
+        { x: 450, y: 20 },
+        { x: 580, y: 50 },
+        { x: 720, y: 90 },
+        { x: 270, y: 120 },
+        { x: 410, y: 140 },
+        { x: 540, y: 180 },
+        { x: 650, y: 150 }
+    ];
 
-let totalDonuts = 8;
-let maxBoxes = 4;
+let totalDonuts = positions.length;
+
+let maxBoxes = Math.ceil(positions.length/2);
 
 let $app, $title, $boxesContainer, $gameArea;
-let $questionSection, $answerInput, $doneButton, $successBorder;
+let $questionSection, $answerInput, $doneButton
+
+
 
 $(document).ready(function () {
     $app = $("#app");
@@ -68,16 +81,7 @@ function createBoxes() {
 }
 
 function createDonuts() {
-    const positions = [
-        { x: 320, y: 40 },
-        { x: 450, y: 20 },
-        { x: 580, y: 50 },
-        { x: 720, y: 90 },
-        { x: 270, y: 120 },
-        { x: 410, y: 140 },
-        { x: 540, y: 180 },
-        { x: 650, y: 150 }
-    ];
+    
 
     positions.forEach((pos, index) => {
         let $donut = $(`
